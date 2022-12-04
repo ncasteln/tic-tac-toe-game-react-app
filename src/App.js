@@ -9,9 +9,11 @@ const App = () => {
   return (
     <div className='App'>
       <h1>TicTacToe - React App</h1>
-      {!started 
-        ? <StartButton startNewGame={setStarted} />
-        : <SelectShape />}
+      {
+        !started 
+          ? <StartButton startNewGame={setStarted} />
+          : <SelectShape />
+      }
     </div>
   )
 }

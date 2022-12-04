@@ -11,14 +11,14 @@ const Board = ({ shapes }) => {
     setBoard(['', '', '', '', '', '', '', '', '']);
     setCPUTurn(false);
     setWinner(null);
-  }
+  };
 
   useEffect(() => {
-    if(checkWinner(board)) {
+    if (checkWinner(board)) {
       setWinner(checkWinner(board));
       return;
     }
-    if(!winner && isCPUturn) {
+    if (!winner && isCPUturn) {
       CPUTurn();
     }
   }, [isCPUturn]);
@@ -91,11 +91,13 @@ const Board = ({ shapes }) => {
 
   return (
     <div>
-        {!winner
-          ? <div className="Board">{squares}</div>
-          : <EndGame 
+        {
+          !winner
+            ? <div className="Board">{squares}</div>
+            : <EndGame 
               winner={winner}
-              restartGame={restartGame} />}
+              restartGame={restartGame} />
+        }
     </div>
   )
 };
